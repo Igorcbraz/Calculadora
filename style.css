@@ -1,0 +1,127 @@
+/* Importing Font */
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap');
+
+/* Font settings */
+*{
+    font-family: 'Spartan', sans-serif;
+}
+.container{
+    margin: 0;
+    padding: 0;
+}
+/* Cores */
+:root{
+    --background:hsl(222, 26%, 31%);
+    --background-dark: hsl(223, 31%, 20%);
+    --background-very-dark: hsl(224, 36%, 15%);
+
+
+    --key-background: hsl(30, 25%, 89%);
+    --key-background-dark: hsl(32, 17%, 85%);
+    --key-shadow: hsl(28, 16%, 65%);
+
+    --key-blue-background: hsl(225, 21%, 49%);
+    --key-blue-shadow: hsl(224, 28%, 35%);
+
+    --key-red-background: hsl(6, 63%, 50%);
+    --key-red-shadow: hsl(6, 70%, 34%);
+}
+
+/* Background settings */
+.calc{
+    background-color: var(--background);
+    width: 100vw;
+    height: 100vh;
+}
+.calc-content{  
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+/* Top of the calculator */
+.calc-top h3{
+    color: #FFF;
+}
+.calc-top-result input{
+    background-color: var(--background-very-dark); 
+    color: #FFF;
+    border: none;
+    margin-bottom: 20px;
+    text-align: right;
+    padding: 17px;
+    font-size: 32px;
+    border-radius: 10px;
+}
+
+/* Keys or Bottons */
+.calc-keys{
+    background-color: var(--background-dark);
+    border-radius: 10px;
+    padding: 10px;
+}
+.calc-keys input{
+    background-color: var(--key-background);
+    color: var(--background);
+    border: 2px solid var(--key-background);
+    border-radius: 5px;
+    box-shadow: 1px 1.5px 1px var(--key-shadow);
+    margin: 10px;
+    height: 35px;
+    transition: 0.7s;
+}
+#reset, #del{
+    background-color: var(--key-blue-background);
+    color: #FFF;
+    box-shadow: 1px 1.5px 1px var(--key-blue-shadow);
+    border: 2px solid var(--key-blue-background);
+    transition: 0.7s;
+}
+#del{
+    font-size: 13px;
+    padding: 0 3%;
+}
+#equals{
+    background-color: var(--key-red-background);
+    color: #FFF;
+    box-shadow: 1px 1.5px 1px var(--key-red-shadow);
+    border: 2px solid var(--key-red-background);
+    transition: 0.7s;
+}
+
+/* Keys hover animations */
+.calc-keys input:hover{
+    border: 2px solid var(--key-background);
+    color: var(--key-background);
+    background-color: hsla(0, 0%, 100%, 0);
+    transition: 0.5s;
+}
+#reset:hover, #del:hover{
+    border: 2px solid var(--key-blue-background);
+    color: var(--key-blue-background);
+    background-color: hsla(0, 0%, 100%, 0);
+    transition: 0.5s;
+}
+#equals:hover{
+    border: 2px solid var(--key-red-background);
+    color: var(--key-red-background);
+    background-color: hsla(0, 0%, 100%, 0);
+    transition: 0.5s;
+}
+
+/* Keys activated */
+.calc-keys input:active{
+    box-shadow: 3px 3px 3px var(--key-shadow);
+    background-color: var(--key-background);
+    color: var(--background);
+}
+#reset:active, #del:active{
+    box-shadow: 3px 3px 3px var(--key-blue-shadow);
+    background-color: var(--key-blue-background);
+    color: var(--key-background);
+}
+#equals:active{
+    box-shadow: 3px 3px 3px var(--key-red-shadow);
+    background-color: var(--key-red-background);
+    color: var(--key-background);
+}
