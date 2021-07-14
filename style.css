@@ -40,8 +40,21 @@
     transform: translate(-50%, -50%);
 }
 /* Top of the calculator */
-.calc-top h3{
+.calc-top h3{color: #FFF;}
+
+.calc-top h4{
     color: #FFF;
+    text-transform: uppercase;
+    font-size: 15px;
+    text-align: center;
+    margin-top: 5px;
+}
+.calc-top span{
+    text-align: right;
+    letter-spacing: 6px;
+    color: white;
+    font-size: 13px;
+    padding: 0;
 }
 .calc-top-result input{
     background-color: var(--background-very-dark); 
@@ -125,3 +138,79 @@
     background-color: var(--key-red-background);
     color: var(--key-background);
 }
+
+/* Toggle theme button */
+/* Basics configs for styling input type range */
+input[type=range] {
+    -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+    width: 100%; /* Specific width is required for Firefox. */
+    background: transparent; /* Otherwise white in Chrome */
+}
+  
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+}
+  
+input[type=range]:focus {
+    outline: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
+}
+  
+input[type=range]::-ms-track {
+    width: 100%;
+    cursor: pointer;
+  
+    /* Hides the slider so custom styles can be added */
+    background: transparent; 
+    border-color: transparent;
+    color: transparent;
+}
+
+/* Styling Thumb for diferents browsers */
+/* thumb = circle on the range */
+
+/* WebKit/Blink */
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: none;
+    height: 18px;
+    width: 18px;
+    border-radius: 20px;
+    background: var(--key-red-background);
+    cursor: pointer;
+    box-shadow: 1px 1px 1px var(--key-red-shadow);
+}
+/* Firefox */
+input[type=range]::-moz-range-thumb {
+    -webkit-appearance: none;
+    border: none;
+    height: 18px;
+    width: 18px;
+    border-radius: 20px;
+    background: var(--key-red-background);
+    cursor: pointer;
+    box-shadow: 1px 1px 1px var(--key-red-shadow);
+}
+  
+  /* IE */
+input[type=range]::-ms-thumb {
+    -webkit-appearance: none;
+    border: none;
+    height: 18px;
+    width: 18px;
+    border-radius: 20px;
+    background: var(--key-red-background);
+    cursor: pointer;
+    box-shadow: 1px 1px 1px var(--key-red-shadow);
+}
+/* Style for background */
+.toggle{
+    background-color: var(--background-dark);
+    border-radius: 25px;
+    height: 25px;
+    padding: 0 4px !important
+}
+/* This make user can click and drag the button */
+.toggle input{
+    width: 100%;
+}
+
