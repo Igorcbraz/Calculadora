@@ -1,25 +1,46 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+    <!-- Basics Metas Configs -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Description for Google Searchs -->
+    <meta 
+        name="description"
+        content="This Responsive Calculator is a portifolio project and challenge made by Frotntend Mentor"
+    >
+
     <title>Calculator</title>
+
+    <!-- Favicon -->
     <link rel="shortcut icon" href="images/favicon-32x32.png" type="image/x-icon">
-    <link rel="stylesheet" href="style.css">
+
+    <!-- Boosttap CSS link -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- Default style CSS -->
+    <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
     
     <div class="calc container-fluid">
         <div class="row calc-content justify-content-center w-100 mx-auto">
             <div class="col-12 col-md-8 col-lg-6 col-xl-4 ">
+
+                <!-- Top of the Calculator -->
                 <div class="container calc-top">
+
+                    <!-- 3 themes options -->
                     <div class="row justify-content-end">
                         <span class="col-1">1</span>
                         <span class="col-1">2</span>
                         <span class="col-1">3</span>
                     </div>
+
+                    <!-- Theme toggle options  -->
                     <div class="calc-top row">
 
                         <h3 class="col-6">calc</h3>
@@ -32,11 +53,17 @@
                         </div>
 
                     </div>
+
+                    <!-- Input to put the results  -->
                     <div class="calc-top-result row">
                         <input type="text" class="col-12" id="result" placeholder="0" disabled></input>
                     </div>
                 </div>
+
+                <!-- Bottom of the Calculator -->
                 <div class="calc-keys">
+
+                    <!-- All the Keys/Buttons for the Calculator Works -->
                     <div class="container">
                         <div class="row">
                             <input class="col" type="button" value="7" onclick="input('7')">
@@ -67,13 +94,17 @@
                             <input class="col" type="button" value="=" id="equals" onclick="calc()">
                         </div>
                     </div>
+
                 </div>
+
             </div>
         </div>
     </div>
 
+    <!-- Link Boostrap JS  -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Link Script Js -->
     <script src="script.js"></script>
 </body>
 </html>

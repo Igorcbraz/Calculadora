@@ -8,25 +8,26 @@
 
 /* Cores */
 :root{
-    --background:hsl(222, 26%, 31%);
-    --background-dark: hsl(223, 31%, 20%);
-    --background-very-dark: hsl(224, 36%, 15%);
+    --background          : #3a4764;
+    --background-dark     : #232c43;
+    --background-very-dark: #182034;
 
 
-    --key-color-top: #FFF;
-    --key-color-bottom: hsl(222, 26%, 31%);
-    --key-background: hsl(30, 25%, 89%);
-    --key-background-dark: hsl(32, 17%, 85%);
-    --key-shadow: hsl(28, 16%, 65%);
+    --key-color-top       : #ffffff;
+    --key-color-bottom    : #3a4764;
+    --key-background      : #eae3dc;
+    --key-background-dark : #dfd9d2;
+    --key-shadow          : #b4a597;
 
-    --key-blue-background: hsl(225, 21%, 49%);
-    --key-blue-shadow: hsl(224, 28%, 35%);
+    --key-blue-background : #637097;
+    --key-blue-shadow     : #404e72;
 
-    --key-red-background: hsl(6, 63%, 50%);
-    --key-red-shadow: hsl(6, 70%, 34%);
+    --key-red-background  : #d03f2f;
+    --key-red-shadow      : #93261a;
 
     --transition: 1s;
 }
+
 /* Background settings */
 .calc{
     background-color: var(--background);
@@ -184,6 +185,7 @@ input[type=range]::-webkit-slider-thumb {
     background: var(--key-red-background);
     cursor: pointer;
     box-shadow: 1px 1px 1px var(--key-red-shadow);
+    transition: var(--transition);
 }
 /* Firefox */
 input[type=range]::-moz-range-thumb {

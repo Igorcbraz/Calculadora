@@ -39,27 +39,88 @@ function del(){
     =================== TOGGLE THEME ===================
     ====================================================
 */
-
 // Get the root element
 var root = document.querySelector(':root');
 
-// Create a function for setting a variable value
+const darkThemeMq  = window.matchMedia("(prefers-color-scheme: dark)");
+const lightThemeMq = window.matchMedia("(prefers-color-scheme: light)");
+
+if (darkThemeMq.matches) {
+    document.getElementById('btnTheme').value = "3";
+
+    root.style.setProperty('--background'          , '#17062a');
+    root.style.setProperty('--background-dark'     , '#1e0836');
+    root.style.setProperty('--background-very-dark', '#1e0836');
+    
+    root.style.setProperty('--key-color-top'       , '#f7de43');
+    root.style.setProperty('--key-color-bottom'    , '#f7de43');
+    root.style.setProperty('--key-background'      , '#331b4d');
+    root.style.setProperty('--key-shadow'          , '#851c9c');
+
+    root.style.setProperty('--key-blue-background' , '#56077c');
+    root.style.setProperty('--key-blue-shadow'     , '#851c9c');
+
+    root.style.setProperty('--key-red-background'  , '#00decf');
+    root.style.setProperty('--key-red-shadow'      , '#00decf');
+} else if(lightThemeMq.matches){
+    document.getElementById('btnTheme').value = "2";
+    root.style.setProperty('--background'          , '#e6e6e6');
+    root.style.setProperty('--background-dark'     , '#d3cdcd');
+    root.style.setProperty('--background-very-dark', '#eeeeee');
+    
+    root.style.setProperty('--key-color-top'       , '#3d3d33');
+    root.style.setProperty('--key-color-bottom'    , '#3d3d33');
+    root.style.setProperty('--key-background'      , '#e5e4e0');
+    root.style.setProperty('--key-background-dark' , '#dfd9d2');
+    root.style.setProperty('--key-shadow'          , '#b4a597');
+
+    root.style.setProperty('--key-blue-background' , '#388187');
+    root.style.setProperty('--key-blue-shadow'     , '#1c6166');
+
+    root.style.setProperty('--key-red-background'  , '#d03f2f');
+    root.style.setProperty('--key-red-shadow'      , '#93261a');    
+} else {
+    root.style.setProperty('--background'          , '#3a4764');
+    root.style.setProperty('--background-dark'     , '#232c43');
+    root.style.setProperty('--background-very-dark', '#182034');
+    
+    root.style.setProperty('--key-color-top'       , '#ffffff');
+    root.style.setProperty('--key-color-bottom'    , '#3a4764');
+    root.style.setProperty('--key-background'      , '#eae3dc');
+    root.style.setProperty('--key-background-dark' , '#dfd9d2');
+    root.style.setProperty('--key-shadow'          , '#b4a597');
+
+    root.style.setProperty('--key-blue-background' , '#637097');
+    root.style.setProperty('--key-blue-shadow'     , '#404e72');
+
+    root.style.setProperty('--key-red-background'  , '#d03f2f');
+    root.style.setProperty('--key-red-shadow'      , '#93261a');    
+}
+
+// Create a function for recive the value of range input
 function myFunction_set(val) {
     document.getElementById('btnTheme').value = val; 
-    
-    if(val == 1){
-        root.style.setProperty('--background'          , 'hsl(222, 26%, 31%)');
-        root.style.setProperty('--background-dark'     , 'hsl(223, 31%, 20%)');
-        root.style.setProperty('--background-very-dark', 'hsl(224, 36%, 15%)');
-        
-        root.style.setProperty('--key-color-top'       , '#FFF');
-        root.style.setProperty('--key-color-bottom'    , 'hsl(222, 26%, 31%)');
-        root.style.setProperty('--key-background'      , 'hsl(30, 25%, 89%)');
 
-        root.style.setProperty('--key-blue-background' , 'hsl(225, 21%, 49%)');
-        root.style.setProperty('--key-blue-shadow'     , 'hsl(224, 28%, 35%)');
+    // Default theme 
+    if(val == 1){
+        root.style.setProperty('--background'          , '#3a4764');
+        root.style.setProperty('--background-dark'     , '#232c43');
+        root.style.setProperty('--background-very-dark', '#182034');
+        
+        root.style.setProperty('--key-color-top'       , '#ffffff');
+        root.style.setProperty('--key-color-bottom'    , '#3a4764');
+        root.style.setProperty('--key-background'      , '#eae3dc');
+        root.style.setProperty('--key-background-dark' , '#dfd9d2');
+        root.style.setProperty('--key-shadow'          , '#b4a597');
+
+        root.style.setProperty('--key-blue-background' , '#637097');
+        root.style.setProperty('--key-blue-shadow'     , '#404e72');
+
+        root.style.setProperty('--key-red-background'  , '#d03f2f');
+        root.style.setProperty('--key-red-shadow'      , '#93261a');
     } 
-    
+     
+    // White theme
     else if(val == 2){
         root.style.setProperty('--background'          , '#e6e6e6');
         root.style.setProperty('--background-dark'     , '#d3cdcd');
@@ -68,29 +129,32 @@ function myFunction_set(val) {
         root.style.setProperty('--key-color-top'       , '#3d3d33');
         root.style.setProperty('--key-color-bottom'    , '#3d3d33');
         root.style.setProperty('--key-background'      , '#e5e4e0');
+        root.style.setProperty('--key-background-dark' , '#dfd9d2');
+        root.style.setProperty('--key-shadow'          , '#b4a597');
 
         root.style.setProperty('--key-blue-background' , '#388187');
         root.style.setProperty('--key-blue-shadow'     , '#1c6166');
+
+        root.style.setProperty('--key-red-background'  , '#d03f2f');
+        root.style.setProperty('--key-red-shadow'      , '#93261a');
     }
     
+    // Dark theme
     else{
+        root.style.setProperty('--background'          , '#17062a');
+        root.style.setProperty('--background-dark'     , '#1e0836');
+        root.style.setProperty('--background-very-dark', '#1e0836');
+        
+        root.style.setProperty('--key-color-top'       , '#f7de43');
+        root.style.setProperty('--key-color-bottom'    , '#f7de43');
+        root.style.setProperty('--key-background'      , '#331b4d');
+        root.style.setProperty('--key-shadow'          , '#851c9c');
 
+        root.style.setProperty('--key-blue-background' , '#56077c');
+        root.style.setProperty('--key-blue-shadow'     , '#851c9c');
+
+        root.style.setProperty('--key-red-background'  , '#00decf');
+        root.style.setProperty('--key-red-shadow'      , '#00decf');
     } 
   
 }
-
-
-/*          THEME 2
-
-    --background:#e6e6e6;
-    --background-dark: #d3cdcd;
-    --background-very-dark: #eeeeee;
-
-    --key-color-top: #3d3d33;
-    --key-color-bottom: #3d3d33;
-    --key-background: #e5e4e0;
-
-    --key-blue-background: #388187;
-    --key-blue-shadow: #1c6166;
-
-*/
