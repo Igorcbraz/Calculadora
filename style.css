@@ -5,10 +5,7 @@
 *{
     font-family: 'Spartan', sans-serif;
 }
-.container{
-    margin: 0;
-    padding: 0;
-}
+
 /* Cores */
 :root{
     --background:hsl(222, 26%, 31%);
@@ -39,6 +36,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
 /* Top of the calculator */
 .calc-top h3{color: #FFF;}
 
@@ -50,11 +48,8 @@
     margin-top: 5px;
 }
 .calc-top span{
-    text-align: right;
-    letter-spacing: 6px;
     color: white;
     font-size: 13px;
-    padding: 0;
 }
 .calc-top-result input{
     background-color: var(--background-very-dark); 
@@ -207,10 +202,9 @@ input[type=range]::-ms-thumb {
     background-color: var(--background-dark);
     border-radius: 25px;
     height: 25px;
-    padding: 0 4px !important
+    padding: 0 6px !important;
 }
 /* This make user can click and drag the button */
 .toggle input{
     width: 100%;
 }
-
