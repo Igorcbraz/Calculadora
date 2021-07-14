@@ -13,6 +13,8 @@
     --background-very-dark: hsl(224, 36%, 15%);
 
 
+    --key-color-top: #FFF;
+    --key-color-bottom: hsl(222, 26%, 31%);
     --key-background: hsl(30, 25%, 89%);
     --key-background-dark: hsl(32, 17%, 85%);
     --key-shadow: hsl(28, 16%, 65%);
@@ -22,13 +24,15 @@
 
     --key-red-background: hsl(6, 63%, 50%);
     --key-red-shadow: hsl(6, 70%, 34%);
-}
 
+    --transition: 1s;
+}
 /* Background settings */
 .calc{
     background-color: var(--background);
     width: 100vw;
     height: 100vh;
+    transition: var(--transition);
 }
 .calc-content{  
     position: absolute;
@@ -38,28 +42,34 @@
 }
 
 /* Top of the calculator */
-.calc-top h3{color: #FFF;}
+.calc-top h3{
+    color: var(--key-color-top);
+    transition: var(--transition);
+}
 
 .calc-top h4{
-    color: #FFF;
+    color: var(--key-color-top);
     text-transform: uppercase;
     font-size: 15px;
     text-align: center;
     margin-top: 5px;
+    transition: var(--transition);
 }
 .calc-top span{
-    color: white;
+    color: var(--key-color-top);
     font-size: 13px;
+    transition: var(--transition);
 }
 .calc-top-result input{
     background-color: var(--background-very-dark); 
-    color: #FFF;
+    color: var(--key-color-top);
     border: none;
     margin-bottom: 20px;
     text-align: right;
     padding: 17px;
     font-size: 32px;
     border-radius: 10px;
+    transition: var(--transition);
 }
 
 /* Keys or Bottons */
@@ -67,23 +77,24 @@
     background-color: var(--background-dark);
     border-radius: 10px;
     padding: 10px;
+    transition: var(--transition);
 }
 .calc-keys input{
     background-color: var(--key-background);
-    color: var(--background);
+    color: var(--key-color-bottom);
     border: 2px solid var(--key-background);
     border-radius: 5px;
     box-shadow: 1px 1.5px 1px var(--key-shadow);
     margin: 10px;
     height: 35px;
-    transition: 0.7s;
+    transition: var(--transition);
 }
 #reset, #del{
     background-color: var(--key-blue-background);
     color: #FFF;
     box-shadow: 1px 1.5px 1px var(--key-blue-shadow);
     border: 2px solid var(--key-blue-background);
-    transition: 0.7s;
+    transition: var(--transition);
 }
 #del{
     font-size: 13px;
@@ -91,16 +102,16 @@
 }
 #equals{
     background-color: var(--key-red-background);
-    color: #FFF;
+    color: var(--key-background);
     box-shadow: 1px 1.5px 1px var(--key-red-shadow);
     border: 2px solid var(--key-red-background);
-    transition: 0.7s;
+    transition: var(--transition);
 }
 
 /* Keys hover animations */
 .calc-keys input:hover{
     border: 2px solid var(--key-background);
-    color: var(--key-background);
+    color: var(--key-color-top);
     background-color: hsla(0, 0%, 100%, 0);
     transition: 0.5s;
 }
@@ -203,8 +214,11 @@ input[type=range]::-ms-thumb {
     border-radius: 25px;
     height: 25px;
     padding: 0 6px !important;
+    transition: var(--transition);
 }
 /* This make user can click and drag the button */
 .toggle input{
     width: 100%;
 }
+
+/* ======================= Theme 2 ======================= */
