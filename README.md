@@ -11,7 +11,7 @@ Desafio feito por <a href="https://www.frontendmentor.io/challenges/calculator-a
 
 <hr></hr>    
     
-<h3 align="left">🌗  Prefer Color Scheme:</h3>
+<h2 align="left">🌗  Prefer Color Scheme:</h2>
 <p>Além dos 3 diferentes temas da calculadora, foi usado o recurso de mídia <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme" target="_blank"><code>prefer-color-scheme</code></a>.</p>
 
 <p>Esse recurso possibilita o entendimento de qual a preferência do usuário em relação aos temas, assim podendo receber dois valores:</p>
@@ -33,7 +33,7 @@ Desafio feito por <a href="https://www.frontendmentor.io/challenges/calculator-a
 }
 ```
 <p>Mas com esse método o carregamento do código irá ficar mais lento pois seria necessário repetir todas as propriedades desejadas com suas novas colorações.</p>
-<h4>Então qual a solução ? 🤔</h4>
+<h3>Então qual a solução ? 🤔</h3>
 <p>Iremos apenas mudar os valores das variavéis do CSS com JS.</p>
 
 ```
@@ -77,11 +77,11 @@ const theme = {
 var root = document.querySelector(':root');
 ```
 
-<h4>Como é Possível fazer o Teste/Debug ? 🤔</h4>
+<h3>Como é Possível fazer o Teste/Debug ? 🤔</h3>
 </p>Podemos usar a ferramenta de desenvoledor do google chrome e alterar os valores Dark ou Light</p>
 <img width="400px" height="300px" src="images/Debug.jpg"/>
 
-<h4>Resultado Final 🥳:</h4>
+<h3>Resultado Final 🥳:</h3>
 
 <img width="584px" height="372px" src="https://user-images.githubusercontent.com/82618164/126012352-7c19f908-f04b-4c66-a568-191bdfa5d8b8.gif"/>
     
