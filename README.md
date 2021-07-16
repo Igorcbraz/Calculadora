@@ -4,9 +4,7 @@
 
 <!-- Imagens do Projeto -->
 <div align="center">
-<img width="500px" height="350px" align="center" src="design/desktop-design-theme-1.jpg"/> <img width="200px" height="350px" align="center" src="design/mobile-design-theme-1.jpg">
-<br><br>
-
+<img width="584px" height="372px" src="https://user-images.githubusercontent.com/82618164/126012518-19b8e31c-6388-48ad-aa82-610bbab838c3.gif"/> <br>
 <!-- Atribuições-->
 Desafio feito por <a href="https://www.frontendmentor.io/challenges/calculator-app-9lteq5N29"><em>Frontend Mentor</em></a>
 </div>
@@ -80,16 +78,12 @@ var root = document.querySelector(':root');
 ```
 
 <h4>Como é Possível fazer o Teste/Debug ? 🤔</h4>
-</p>Podemos usar a ferramenta de desenvoledor do google chrome !</p>
-<img width="500px" height="350px" src="images/Debug.jpg"/>
+</p>Podemos usar a ferramenta de desenvoledor do google chrome e alterar os valores Dark ou Light</p>
+<img width="400px" height="300px" src="images/Debug.jpg"/>
 
-<div align="left">
+<h4>Resultado Final 🥳:</h4>
 
-<img width="500px" height="350px" align="center" src="design/desktop-design-theme-2.jpg"/> <img width="200px" height="350px" align="center" src="design/mobile-design-theme-2.jpg"> <br>
-
-<img width="500px" height="350px" align="center" src="design/desktop-design-theme-3.jpg"/> <img width="200px" height="350px" align="center" src="design/mobile-design-theme-3.jpg"> <br>
-    
-</div>
+<img width="584px" height="372px" src="https://user-images.githubusercontent.com/82618164/126012352-7c19f908-f04b-4c66-a568-191bdfa5d8b8.gif"/>
     
 <!-- Tecnologias e Frameworks Usados-->
 <h3 align="left">🧠  Tecnologias e Frameworks Usados:</h3>
