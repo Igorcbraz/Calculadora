@@ -80,8 +80,11 @@ var root = document.querySelector(':root');
 ```
 
 <h4>Como é Possível fazer o Teste/Debug ? 🤔</h4>
-</p>Podemos usar a ferramenta de desenvoledor do google chrome !</p>
-<img width="500px" height="350px" src="images/Debug.jpg"/>
+</p>Podemos usar a ferramenta de desenvoledor do google chrome e alterar os valores Dark ou Light</p>
+<img width="400px" height="300px" src="images/Debug.jpg"/>
+
+<h4>Resultado Final:</h4>
+
 
 <div align="left">
 
