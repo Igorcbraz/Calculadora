@@ -34,7 +34,7 @@ Desafio feito por <a href="https://www.frontendmentor.io/challenges/calculator-a
 ```
 <p>Mas com esse método o carregamento do código irá ficar mais lento pois seria necessário repetir todas as propriedades desejadas com suas novas colorações.</p>
 <h3>Então qual a solução ? 🤔</h3>
-<p>Iremos apenas mudar os valores das variavéis do CSS com JS.</p>
+<p>Iremos apenas mudar os valores das variáveis do CSS com JS.</p>
 
 ```
 const darkThemeMq  = window.matchMedia("(prefers-color-scheme: dark)");
