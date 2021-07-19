@@ -4,16 +4,14 @@
 
 <!-- Imagens do Projeto -->
 <div align="center">
-<img width="500px" height="350px" align="center" src="design/desktop-design-theme-1.jpg"/> <img width="200px" height="350px" align="center" src="design/mobile-design-theme-1.jpg">
-<br><br>
-
+<img width="584px" height="372px" src="https://user-images.githubusercontent.com/82618164/126012518-19b8e31c-6388-48ad-aa82-610bbab838c3.gif"/> <br>
 <!-- Atribuições-->
 Desafio feito por <a href="https://www.frontendmentor.io/challenges/calculator-app-9lteq5N29"><em>Frontend Mentor</em></a>
 </div>
 
 <hr></hr>    
     
-<h3 align="left">🌗  Prefer Color Scheme:</h3>
+<h2 align="left">🌗  Prefer Color Scheme:</h2>
 <p>Além dos 3 diferentes temas da calculadora, foi usado o recurso de mídia <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme" target="_blank"><code>prefer-color-scheme</code></a>.</p>
 
 <p>Esse recurso possibilita o entendimento de qual a preferência do usuário em relação aos temas, assim podendo receber dois valores:</p>
@@ -35,8 +33,8 @@ Desafio feito por <a href="https://www.frontendmentor.io/challenges/calculator-a
 }
 ```
 <p>Mas com esse método o carregamento do código irá ficar mais lento pois seria necessário repetir todas as propriedades desejadas com suas novas colorações.</p>
-<h4>Então qual a solução ? 🤔</h4>
-<p>Iremos apenas mudar os valores das variavéis do CSS com JS.</p>
+<h3>Então qual a solução ? 🤔</h3>
+<p>Iremos apenas mudar os valores das variáveis do CSS com JS.</p>
 
 ```
 const darkThemeMq  = window.matchMedia("(prefers-color-scheme: dark)");
@@ -88,13 +86,11 @@ var root = document.querySelector(':root');
 
 <div align="left">
 
-<img width="500px" height="350px" align="center" src="design/desktop-design-theme-2.jpg"/> <img width="200px" height="350px" align="center" src="design/mobile-design-theme-2.jpg"> <br>
+<h3>Resultado Final 🥳:</h3>
 
-<img width="500px" height="350px" align="center" src="design/desktop-design-theme-3.jpg"/> <img width="200px" height="350px" align="center" src="design/mobile-design-theme-3.jpg"> <br>
-    
-</div>
+<img width="584px" height="372px" src="https://user-images.githubusercontent.com/82618164/126012352-7c19f908-f04b-4c66-a568-191bdfa5d8b8.gif"/>
     
 <!-- Tecnologias e Frameworks Usados-->
-<h3 align="left">🧠  Tecnologias e Frameworks Usados:</h3>
+<h2 align="left">🧠  Tecnologias e Frameworks Usados:</h2>
 
 <img width="140px" height="33px" src="https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white"/> <img width="140px" height="33px" src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E"/> <img width="100px" height="33px" src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white"/> <img width="100px" height="33px" src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white"/>
