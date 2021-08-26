@@ -81,9 +81,6 @@ var root = document.querySelector(':root');
 </p>Podemos usar a ferramenta de desenvoledor do google chrome e alterar os valores Dark ou Light</p>
 <img width="400px" height="300px" src="images/Debug.jpg"/>
 
-<h4>Resultado Final:</h4>
-
-
 <div align="left">
 
 <h3>Resultado Final 🥳:</h3>
