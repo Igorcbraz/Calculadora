@@ -77,7 +77,7 @@ const theme = {
 var root = document.querySelector(':root');
 ```
 
-<h4>Como é Possível fazer o Teste/Debug ? 🤔</h4>
+<h3>Como é Possível fazer o Teste/Debug ? 🤔</h3>
 </p>Podemos usar a ferramenta de desenvoledor do google chrome e alterar os valores Dark ou Light</p>
 <img width="400px" height="300px" src="images/Debug.jpg"/>
 
