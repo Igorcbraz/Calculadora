@@ -1,0 +1,120 @@
+body{
+    background: rgb(2,0,36);
+background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(9,100,121,1) 35%, rgba(0,212,255,1) 100%);
+}
+.conte1 {
+    position: relative;
+    padding: 20px 16px 24px;
+    background-color: #e6e6e6;
+    border-radius: 8px;
+    border: 1px solid #f3f3f3;
+    box-shadow:none;
+}
+.parent {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    }
+    
+.div1 { grid-area: 2 / 3 / 3 / 4; }
+
+div {
+    display: block;
+}
+.g {
+    line-height: 1.58;
+    text-align: left;
+}
+select {
+    writing-mode: horizontal-tb !important;
+    text-rendering: auto;
+    color: fieldtext;
+    letter-spacing: normal;
+    word-spacing: normal;
+    line-height: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    appearance: auto;
+    box-sizing: border-box;
+    align-items: center;
+    white-space: pre;
+    -webkit-rtl-ordering: logical;
+    background-color: white;
+    cursor: default;
+    margin: 0em;
+    border-width: 1px;
+    border-style: solid;
+    border-color: -internal-light-dark(rgb(204, 22, 22), rgb(133, 133, 133));
+    border-image: initial;
+    border-radius: 0px;
+}
+.selectTem {
+    color: rgb(0, 0, 0);
+    background-position-x: 98%;
+    width: 449px;
+    margin-bottom: 10px;
+    background: white;
+    border: 1px solid #b4b4b4;
+    font-size: 13px;
+    line-height: 20px;
+    padding: 5px 16px 5px 5px;
+    vertical-align: middle;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+
+.conte2 {
+    display: inline-block;
+    width: 211px;
+    padding-top: 10px;
+}
+.inputValores {
+    background-color: #fcfcfc;
+    border: 1px solid #ffffff;
+    border-radius: 2px 2px 0 0;
+    border-radius: 2px 2px 0 0;
+    color: rgb(0, 0, 0);
+    font-size: 180%;
+    height: 40px;
+    padding: 1px 6px;
+    text-align: center;
+    width: 197px;
+}
+
+.selectTipo {
+    /* background-position-x: 95%; */
+    border-radius: 0 0 2px 2px;
+    border-radius: 0 0 2px 2px;
+    color: #05438f;
+    width: 211px;
+    margin-top: -1px;
+    background: white;
+    border: 1px solid #3c4043;
+    font-size: 13px;
+    line-height: 20px;
+    padding: 5px 16px 5px 5px;
+    vertical-align: middle;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+
+.igual {
+    display: inline-block;
+    line-height: 44px;
+    width: 27px;
+    text-align: center;
+    font-size: 30px;
+    color: #000000;
+    padding-top: 10px;
+    vertical-align: top;
+    margin-left: -4px;
+    margin-right: -4px;
+    font-weight: bold;
+}
