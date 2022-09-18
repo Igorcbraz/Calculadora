@@ -6,6 +6,15 @@
 
 // get the result element
 let result  = document.getElementById("result");
+let resultado  = document.getElementById("res");
+let valor = document.querySelector('#valor');
+
+valor.addEventListener('keyup',()=>{
+    let calculo = (valor.value * 9/5) + 32
+    resultado.value=calculo;
+});
+
+
 
 // Input numbers by key pressed
 function input(num){
@@ -132,5 +141,7 @@ function myFunction_set(val) {
     } 
   
 }
+
+
 
 
