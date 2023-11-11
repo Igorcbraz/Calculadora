@@ -1,110 +1,85 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <!-- Basics Metas Configs -->
+  <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Description for Google Searchs -->
-    <meta 
-        name="description"
-        content="This Responsive Calculator is a portifolio project and challenge made by Frotntend Mentor"
-    >
-
+    <meta name="description" content="This Responsive Calculator is a portfolio project and challenge made by Frotntend Mentor">
+    <meta name="keywords" content="calculator, responsive, frontend, mentor, challenge, portfolio, project, html, css, javascript">
+    <meta name="author" content="Igor Costa Braz">
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow">
+    <meta name="google" content="notranslate">
     <title>Calculator</title>
-
-    <!-- Favicon -->
     <link rel="shortcut icon" href="images/favicon-32x32.png" type="image/x-icon">
-
-    <!-- Boosttap CSS link -->
+    <link rel="canonical" href="https://github.com/Igorcbraz/Calculadora">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
-    <!-- Default style CSS -->
-    <link rel="stylesheet" href="style.css">
-
-</head>
-<body>
-    
+    <link rel="stylesheet" href="./src/css/index.css">
+  </head>
+  <body>
     <div class="calc container-fluid">
-        <div class="row calc-content justify-content-center w-100 mx-auto">
-            <div class="col-12 col-md-8 col-lg-6 col-xl-4 ">
-
-                <!-- Top of the Calculator -->
-                <div class="container calc-top">
-
-                    <!-- 3 themes options -->
-                    <div class="row justify-content-end">
-                        <span class="col-1">1</span>
-                        <span class="col-1">2</span>
-                        <span class="col-1">3</span>
-                    </div>
-
-                    <!-- Theme toggle options  -->
-                    <div class="calc-top row">
-
-                        <h3 class="col-6">calc</h3>
-                        <h4 class="col-3">theme</h4>
-
-                        <div class="col-3 toggle">
-                            <div class="btn-group">
-                                <input type="range" id="btnTheme" min="1" max="3" value="1" onchange="myFunction_set(this.value);">
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <!-- Input to put the results  -->
-                    <div class="calc-top-result row">
-                        <input type="text" class="col-12" id="result" placeholder="0" disabled></input>
-                    </div>
-                </div>
-
-                <!-- Bottom of the Calculator -->
-                <div class="calc-keys">
-
-                    <!-- All the Keys/Buttons for the Calculator Works -->
-                    <div class="container">
-                        <div class="row">
-                            <input class="col" type="button" value="7" onclick="input('7')">
-                            <input class="col" type="button" value="8" onclick="input('8')">
-                            <input class="col" type="button" value="9" onclick="input('9')">
-                            <input class="col" type="button" value="DEL" id="del" onclick="del()">
-                        </div>
-                        <div class="row">
-                            <input class="col" type="button" value="4" onclick="input('4')">
-                            <input class="col" type="button" value="5" onclick="input('5')">
-                            <input class="col" type="button" value="6" onclick="input('6')">
-                            <input class="col" type="button" value="+" onclick="input('+')">
-                        </div>
-                        <div class="row">
-                            <input class="col" type="button" value="1" onclick="input('1')">
-                            <input class="col" type="button" value="2" onclick="input('2')">
-                            <input class="col" type="button" value="3" onclick="input('3')">
-                            <input class="col" type="button" value="-" onclick="input('-')">
-                        </div>
-                        <div class="row">
-                            <input class="col" type="button" value="." onclick="input('.')">
-                            <input class="col" type="button" value="0" onclick="input('0')">
-                            <input class="col" type="button" value="/" onclick="input('/')">
-                            <input class="col" type="button" value="x" onclick="input('*')">
-                        </div>
-                        <div class="row">
-                            <input class="col" type="button" value="RESET" id="reset" onclick="reset()">
-                            <input class="col" type="button" value="=" id="equals" onclick="calc()">
-                        </div>
-                    </div>
-
-                </div>
-
+      <div class="row calc-content justify-content-center w-100 mx-auto">
+        <div class="col-12 col-md-8 col-lg-6 col-xl-4 ">
+          <div class="container calc-top">
+            <div class="row justify-content-end">
+              <span class="col-1">1</span>
+              <span class="col-1">2</span>
+              <span class="col-1">3</span>
             </div>
+
+            <div class="calc-top row">
+              <h3 class="col-6">calc</h3>
+              <h4 class="col-3">theme</h4>
+
+              <div class="col-3 toggle">
+                <div class="btn-group">
+                  <input type="range" id="btnTheme" min="1" max="3" value="1" onchange="changeThemeById(this.value);">
+                </div>
+              </div>
+            </div>
+
+            <div class="calc-top-result row">
+              <input type="text" class="col-12" id="display" placeholder="0" disabled></input>
+            </div>
+          </div>
+          <div class="calc-keys">
+            <div class="container">
+              <div class="row">
+                <input class="col" type="button" value="7" onclick="addInputToDisplay('7')">
+                <input class="col" type="button" value="8" onclick="addInputToDisplay('8')">
+                <input class="col" type="button" value="9" onclick="addInputToDisplay('9')">
+                <input class="col" type="button" value="DEL" id="del" onclick="removeLastInput()">
+              </div>
+              <div class="row">
+                <input class="col" type="button" value="4" onclick="addInputToDisplay('4')">
+                <input class="col" type="button" value="5" onclick="addInputToDisplay('5')">
+                <input class="col" type="button" value="6" onclick="addInputToDisplay('6')">
+                <input class="col" type="button" value="+" onclick="addInputToDisplay('+')">
+              </div>
+              <div class="row">
+                <input class="col" type="button" value="1" onclick="addInputToDisplay('1')">
+                <input class="col" type="button" value="2" onclick="addInputToDisplay('2')">
+                <input class="col" type="button" value="3" onclick="addInputToDisplay('3')">
+                <input class="col" type="button" value="-" onclick="addInputToDisplay('-')">
+              </div>
+              <div class="row">
+                <input class="col" type="button" value="." onclick="addInputToDisplay('.')">
+                <input class="col" type="button" value="0" onclick="addInputToDisplay('0')">
+                <input class="col" type="button" value="/" onclick="addInputToDisplay('/')">
+                <input class="col" type="button" value="x" onclick="addInputToDisplay('*')">
+              </div>
+              <div class="row">
+                <input class="col" type="button" value="RESET" id="reset" onclick="resetDisplayValue()">
+                <input class="col" type="button" value="=" id="equals" onclick="calculate()">
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
-
-    <!-- Link Boostrap JS  -->
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-
-    <!-- Link Script Js -->
-    <script src="script.js"></script>
-</body>
+    <script src="./src/js/calculator.js"></script>
+    <script src="./src/js/theme.js"></script>
+  </body>
 </html>

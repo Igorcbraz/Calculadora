@@ -2,30 +2,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap');
 
 /* Font settings */
-*{
-    font-family: 'Spartan', sans-serif;
+* {
+  font-family: 'Spartan', sans-serif;
 }
 
 /* Cores */
 :root{
-    --background          : #3a4764;
-    --background-dark     : #232c43;
-    --background-very-dark: #182034;
+  --background          : #3a4764;
+  --background-dark     : #232c43;
+  --background-very-dark: #182034;
 
 
-    --key-color-top       : #ffffff;
-    --key-color-bottom    : #3a4764;
-    --key-background      : #eae3dc;
-    --key-background-dark : #dfd9d2;
-    --key-shadow          : #b4a597;
+  --key-color-top       : #ffffff;
+  --key-color-bottom    : #3a4764;
+  --key-background      : #eae3dc;
+  --key-background-dark : #dfd9d2;
+  --key-shadow          : #b4a597;
 
-    --key-blue-background : #637097;
-    --key-blue-shadow     : #404e72;
+  --key-blue-background : #637097;
+  --key-blue-shadow     : #404e72;
 
-    --key-red-background  : #d03f2f;
-    --key-red-shadow      : #93261a;
+  --key-red-background  : #d03f2f;
+  --key-red-shadow      : #93261a;
 
-    --transition: 1s;
+  --transition: 1s;
 }
 
 /* Background settings */
@@ -150,6 +150,7 @@
 /* Basics configs for styling input type range */
 input[type=range] {
     -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+    appearance: none; /* Hides the slider so that custom slider can be made */
     width: 100%; /* Specific width is required for Firefox. */
     background: transparent; /* Otherwise white in Chrome */
 }
@@ -172,7 +173,7 @@ input[type=range]::-ms-track {
     color: transparent;
 }
 
-/* Styling Thumb for diferents browsers */
+/* Styling Thumb for different browsers */
 /* thumb = circle on the range */
 
 /* WebKit/Blink */
@@ -190,6 +191,7 @@ input[type=range]::-webkit-slider-thumb {
 /* Firefox */
 input[type=range]::-moz-range-thumb {
     -webkit-appearance: none;
+    appearance: none;
     border: none;
     height: 18px;
     width: 18px;
@@ -202,6 +204,7 @@ input[type=range]::-moz-range-thumb {
   /* IE */
 input[type=range]::-ms-thumb {
     -webkit-appearance: none;
+    appearance: none;
     border: none;
     height: 18px;
     width: 18px;
@@ -222,5 +225,3 @@ input[type=range]::-ms-thumb {
 .toggle input{
     width: 100%;
 }
-
-/* ======================= Theme 2 ======================= */
