@@ -3,6 +3,18 @@
   ⚡ <a href="https://igorcbraz.github.io/Calculadora/" target="_blank">Calculadora</a> Responsiva e com opções para troca de temas ⚡
 </h3>
 
+<p align="center">
+  <img src="https://img.shields.io/github/stars/Igorcbraz/Calculadora?style=social" alt="GitHub Stars"/>
+  <img src="https://api.netlify.com/api/v1/badges/344dc66c-0b96-4f11-8a84-87fdfed0b4fd/deploy-status" alt="Netlify Status"/>
+  <img src="https://img.shields.io/github/license/Igorcbraz/Calculadora" alt="MIT License"/>
+</p>
+
+<p align="center">
+  <a href="#prefer-color-scheme">Prefer Color Scheme</a> •
+  <a href="#resultado-final">Resultado Final</a> •
+  <a href="#sugestoes">Sugestões</a> •
+</p>
+
 <div align="center">
   <img
     width="584px"
@@ -18,7 +30,7 @@
   </span>
 </div>    
     
-<h2 align="left">🌗 Prefer Color Scheme:</h2>
+<h1 align="left" id="prefer-color-scheme">🌗 Prefer Color Scheme</h2>
 <p>
   Além dos 3 diferentes temas da calculadora, foi usado o recurso de mídia <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme" target="_blank"><code>prefer-color-scheme</code></a>.
 </p>
@@ -42,7 +54,9 @@
 }
 ```
 <p>Mas com esse método o carregamento do código irá ficar mais lento pois seria necessário repetir todas as propriedades desejadas com suas novas colorações.</p>
-<h3>Então qual a solução ? 🤔</h3>
+
+> **Então qual a solução ? 🤔**
+
 <p>Iremos apenas mudar os valores das variáveis do CSS com JS.</p>
 
 ```
@@ -85,17 +99,27 @@ const theme = {
 }
 ```
 
-<h3>Como é Possível fazer o Teste/Debug ? 🤔</h3>
+> **Como é Possível fazer o Teste/Debug ? 🤔**
+
 </p>Podemos usar a ferramenta de desenvoledor do google chrome e alterar os valores Dark ou Light</p>
 <img width="400px" height="300px" src="images/Debug.jpg"/>
 
 <div align="left">
 
-<h3>Resultado Final 🥳:</h3>
+<h1 id="resultado-final">Resultado Final 🥳</h3>
 
 <img width="584px" height="372px" src="https://user-images.githubusercontent.com/82618164/126012352-7c19f908-f04b-4c66-a568-191bdfa5d8b8.gif"/>
-    
-<!-- Tecnologias e Frameworks Usados-->
-<h2 align="left">🧠 Tecnologias e Frameworks Usados:</h2>
+
+<h1 id="sugestoes">Você também ṕode gostar 🤩</h3>
+
+- [Gitfest](https://github.com/Igorcbraz/GitFest) - Gere uma lineup de festival com base nos seus principais repositórios do Github
+- [Enkoji](https://github.com/Igorcbraz/Enkoji) - Site feito para o Enkoji, um templo zen-budista japonês fundado em 1920 no Japão
+
+---
+
+> GitHub [@Igorcbraz](https://github.com/Igorcbraz) &nbsp;&middot;&nbsp;
+> Linkedin [@Igorcbraz](https://www.linkedin.com/in/igorcbraz/)
+
+---
 
 <img width="140px" height="33px" src="https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white"/> <img width="140px" height="33px" src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E"/> <img width="100px" height="33px" src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white"/> <img width="100px" height="33px" src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white"/>
