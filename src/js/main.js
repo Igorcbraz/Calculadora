@@ -1,37 +1,68 @@
-import { CalculatorDisplay } from './calculatorDisplay.js'
-import { ThemeManager } from './themeManager.js';
+import { Calculator } from './calculator.js'
+import { ThemeManager } from './themeManager.js'
 
 import { themes } from '../constants/index.js'
 
 const display = document.getElementById('display')
-const calculatorDisplay = new CalculatorDisplay(display)
+const calculator = new Calculator(display)
 
 const btnTheme = document.getElementById('btnTheme')
-const themeManager = new ThemeManager(themes, btnTheme) 
+const keySelectors = document.querySelectorAll('.key-selector')
+const themeManager = new ThemeManager(themes, btnTheme, keySelectors) 
 
 document.addEventListener('DOMContentLoaded', () => {
-  themeManager.setPreferColorSchemeTheme();
+  themeManager.setPreferColorSchemeTheme()
+  themeManager.applyStoredKeys()
 
   document.querySelectorAll('.add-input').forEach(button => {
     button.addEventListener('click', () => {
       const value = button.dataset.operation || button.value
-      calculatorDisplay.handleAddInput(value)
+      calculator.handleAddInput(value)
     })
   })
 
   document.querySelector('.reset').addEventListener('click', () => {
-    calculatorDisplay.handleResetValue()
+    calculator.handleResetValue()
   })
 
   document.querySelector('.remove-last').addEventListener('click', () => {
-    calculatorDisplay.handleRemoveLastInput()
+    calculator.handleRemoveLastInput()
   })
 
   document.querySelector('.calculate').addEventListener('click', () => {
-    calculatorDisplay.calculate()
+    calculator.calculate()
   })
 
   btnTheme.addEventListener('change', () => {
     themeManager.changeThemeById(btnTheme.value)
+  })
+
+  keySelectors.forEach(selector => {
+    selector.addEventListener('click', () => {
+      alert('Ao clicar em OK, pressione uma tecla para associar a este tema.')
+  
+      const captureKey = (event) => {
+        themeManager.setKeyForTheme(selector, event.key)
+        document.removeEventListener('keydown', captureKey)
+      }
+  
+      document.addEventListener('keydown', captureKey)
+    })
+  })
+  
+  document.addEventListener('keydown', (event) => {
+    const keyActions = calculator.getKeyboardActions()
+    if (keyActions[event.key]) {
+      keyActions[event.key](event)
+    } else if ('0123456789+-*/.'.includes(event.key)) {
+      calculator.handleAddInput(event.key)
+    }
+
+    const themeId = themeManager.getThemeIdByKey(event.key)
+    if (themeId) themeManager.changeThemeById(themeId)
+  })
+
+  document.getElementById('reset-theme').addEventListener('click', function() {
+    themeManager.resetKeys()
   })
 })

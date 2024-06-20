@@ -1,4 +1,4 @@
-export class CalculatorDisplay {
+export class Calculator {
   constructor(displayElement) {
     this.display = displayElement
   }
@@ -24,5 +24,19 @@ export class CalculatorDisplay {
     } catch (error) {
       this.display.value = 'Erro!'
     }
+  }
+
+  getKeyboardActions() {
+    const keyActions = {
+      'Enter': () => this.calculate(),
+      'Backspace': (event) => {
+        this.handleRemoveLastInput()
+        event.preventDefault()
+      },
+      'Escape': () => this.handleResetValue(),
+      'Delete': () => this.handleResetValue()
+    }
+
+    return keyActions
   }
 }
