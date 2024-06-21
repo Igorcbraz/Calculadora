@@ -1,21 +1,42 @@
-const display  = document.getElementById('display')
+export class Calculator {
+  constructor(displayElement) {
+    this.display = displayElement
+  }
 
-function addInputToDisplay(input) {
-  const displayValue = display.value
-  display.value = displayValue + input
-}
+  handleAddInput(input) {
+    this.display.value += input
+  }
 
-function calculate() {
-  if (display.value === '') return
+  handleResetValue() {
+    this.display.value = ''
+  }
 
-  const result = eval(display.value)
-  display.value = result
-}
+  handleRemoveLastInput() {
+    this.display.value = this.display.value.slice(0, -1)
+  }
 
-function resetDisplayValue() {
-  display.value = ""
-}
+  calculate() {
+    if (this.display.value === '') return
 
-function removeLastInput() {
-  display.value = display.value.slice(0, -1)
+    try {
+      const result = new Function('return ' + this.display.value)()
+      this.display.value = result
+    } catch (error) {
+      this.display.value = 'Erro!'
+    }
+  }
+
+  getKeyboardActions() {
+    const keyActions = {
+      'Enter': () => this.calculate(),
+      'Backspace': (event) => {
+        this.handleRemoveLastInput()
+        event.preventDefault()
+      },
+      'Escape': () => this.handleResetValue(),
+      'Delete': () => this.handleResetValue()
+    }
+
+    return keyActions
+  }
 }

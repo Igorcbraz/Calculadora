@@ -22,18 +22,18 @@
         <div class="col-12 col-md-8 col-lg-6 col-xl-4 ">
           <div class="container calc-top">
             <div class="row justify-content-end">
-              <span class="col-1">1</span>
-              <span class="col-1">2</span>
-              <span class="col-1">3</span>
+              <span class="col-1 key-selector" data-key="1">1</span>
+              <span class="col-1 key-selector" data-key="2">2</span>
+              <span class="col-1 key-selector" data-key="3">3</span>
             </div>
 
             <div class="calc-top row">
               <h3 class="col-6">calc</h3>
-              <h4 class="col-3">theme</h4>
+              <h4 class="col-3" id="reset-theme">theme</h4>
 
               <div class="col-3 toggle">
                 <div class="btn-group">
-                  <input type="range" id="btnTheme" min="1" max="3" value="1" onchange="changeThemeById(this.value);">
+                  <input type="range" id="btnTheme" min="1" max="3" value="1">
                 </div>
               </div>
             </div>
@@ -45,32 +45,32 @@
           <div class="calc-keys">
             <div class="container">
               <div class="row">
-                <input class="col" type="button" value="7" onclick="addInputToDisplay('7')">
-                <input class="col" type="button" value="8" onclick="addInputToDisplay('8')">
-                <input class="col" type="button" value="9" onclick="addInputToDisplay('9')">
-                <input class="col" type="button" value="DEL" id="del" onclick="removeLastInput()">
+                <input class="col add-input" type="button" value="7">
+                <input class="col add-input" type="button" value="8">
+                <input class="col add-input" type="button" value="9">
+                <input class="col remove-last" type="button" value="DEL" id="del">
               </div>
               <div class="row">
-                <input class="col" type="button" value="4" onclick="addInputToDisplay('4')">
-                <input class="col" type="button" value="5" onclick="addInputToDisplay('5')">
-                <input class="col" type="button" value="6" onclick="addInputToDisplay('6')">
-                <input class="col" type="button" value="+" onclick="addInputToDisplay('+')">
+                <input class="col add-input" type="button" value="4">
+                <input class="col add-input" type="button" value="5">
+                <input class="col add-input" type="button" value="6">
+                <input class="col add-input" type="button" value="+">
               </div>
               <div class="row">
-                <input class="col" type="button" value="1" onclick="addInputToDisplay('1')">
-                <input class="col" type="button" value="2" onclick="addInputToDisplay('2')">
-                <input class="col" type="button" value="3" onclick="addInputToDisplay('3')">
-                <input class="col" type="button" value="-" onclick="addInputToDisplay('-')">
+                <input class="col add-input" type="button" value="1">
+                <input class="col add-input" type="button" value="2">
+                <input class="col add-input" type="button" value="3">
+                <input class="col add-input" type="button" value="-">
               </div>
               <div class="row">
-                <input class="col" type="button" value="." onclick="addInputToDisplay('.')">
-                <input class="col" type="button" value="0" onclick="addInputToDisplay('0')">
-                <input class="col" type="button" value="/" onclick="addInputToDisplay('/')">
-                <input class="col" type="button" value="x" onclick="addInputToDisplay('*')">
+                <input class="col add-input" type="button" value=".">
+                <input class="col add-input" type="button" value="0">
+                <input class="col add-input" type="button" value="/">
+                <input class="col add-input" type="button" value="x" data-operation="*">
               </div>
               <div class="row">
-                <input class="col" type="button" value="RESET" id="reset" onclick="resetDisplayValue()">
-                <input class="col" type="button" value="=" id="equals" onclick="calculate()">
+                <input class="col reset" type="button" value="RESET" id="reset">
+                <input class="col calculate" type="button" value="=" id="equals">
               </div>
             </div>
           </div>
@@ -78,8 +78,7 @@
       </div>
     </div>
     
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <script src="./src/js/calculator.js"></script>
-    <script src="./src/js/theme.js"></script>
+    <script type="module" src="./src/js/main.js"></script>
+    <script type="module" src="./src/constants/index.js"></script>
   </body>
 </html>
