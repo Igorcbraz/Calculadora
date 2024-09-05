@@ -1,18 +1,24 @@
 import { Calculator } from './calculator.js'
 import { ThemeManager } from './themeManager.js'
+import { Guide } from './guide.js'
 
 import { themes } from '../constants/index.js'
 
-const display = document.getElementById('display')
-const calculator = new Calculator(display)
-
-const btnTheme = document.getElementById('btnTheme')
-const keySelectors = document.querySelectorAll('.key-selector')
-const themeManager = new ThemeManager(themes, btnTheme, keySelectors) 
-
 document.addEventListener('DOMContentLoaded', () => {
+  const display = document.getElementById('display')
+  const calculator = new Calculator(display)
+
+  const btnTheme = document.getElementById('btnTheme')
+  const keySelectors = document.querySelectorAll('.key-selector')
+  const themeManager = new ThemeManager(themes, btnTheme, keySelectors) 
+    
   themeManager.setPreferColorSchemeTheme()
   themeManager.applyStoredKeys()
+
+  const guide = new Guide()
+  guide.loadSteps()
+  guide.loadConfig()
+  guide.start()
 
   document.querySelectorAll('.add-input').forEach(button => {
     button.addEventListener('click', () => {
