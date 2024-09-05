@@ -31,6 +31,9 @@ export const themes = {
       { name: '--key-blue-shadow', value: '#1c6166' },
       { name: '--key-red-background', value: '#d03f2f' },
       { name: '--key-red-shadow', value: '#93261a' },
+      { name: '--guide-text', value: '#3d3d33' },
+      { name: '--guide-button', value: '#182034' },
+      { name: '--guide-button-disabled', value: '#b4a597' },
     ]
   },
   'Dark': {
@@ -47,6 +50,9 @@ export const themes = {
       { name: '--key-blue-shadow', value: '#851c9c' },
       { name: '--key-red-background', value: '#00decf' },
       { name: '--key-red-shadow', value: '#00decf' },
+      { name: '--guide-text', value: '#d3cdcd' },
+      { name: '--guide-button', value: '#f7de43' },
+      { name: '--guide-button-disabled', value: '#b4a597' },
     ]
   }
 }

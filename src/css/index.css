@@ -25,7 +25,7 @@
   --key-red-background  : #d03f2f;
   --key-red-shadow      : #93261a;
 
-  --transition: 1s;
+  --transition: 0.5s;
 }
 
 /* Background settings */
@@ -224,4 +224,53 @@ input[type=range]::-ms-thumb {
 /* This make user can click and drag the button */
 .toggle input{
     width: 100%;
+}
+
+
+/* Estilo personalizado para o tooltip */
+.custom-tooltip {
+  background-color: var(--background);
+  color: var(--guide-text);
+  border-radius: 10px;
+  padding: 15px;
+  font-size: 16px;
+}
+
+/* Estilo personalizado para o destaque */
+.custom-highlight {
+  border: 2px solid var(--key-red-background);
+}
+
+.introjs-button {
+  background-color: var(--key-background);
+  color: var(--guide-button);
+  border: 1px solid var(--key-background);
+  border-radius: 5px;
+  box-shadow: 1px 1.5px 1px var(--key-shadow);
+  transition: var(--transition);
+  text-shadow: none;
+}
+
+.introjs-button:focus {
+  box-shadow: 1px 1.5px 1px var(--key-shadow);
+  border: 1px solid var(--guide-button);
+  background-color: var(--key-background);
+  color: var(--guide-button);
+}
+
+.introjs-button:hover {
+  background-color: var(--key-background);
+  color: var(--guide-button);
+  border: 1px solid var(--key-background);
+}
+
+.introjs-disabled, .introjs-disabled:hover {
+  border-color: transparent;
+  box-shadow: none;
+  color: var(--guide-button-disabled);
+}
+
+.introjs-dontShowAgain label {
+  background-color: transparent;
+  color: var(--guide-text)
 }
