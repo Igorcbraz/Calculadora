@@ -47,6 +47,9 @@ document.addEventListener('DOMContentLoaded', () => {
     selector.addEventListener('click', () => {
       alert('Ao clicar em OK, pressione uma tecla para associar a este tema.')
   
+      const hiddenInput = document.getElementById('hiddenInput')
+      hiddenInput.focus()
+
       const captureKey = (event) => {
         themeManager.setKeyForTheme(selector, event.key)
         document.removeEventListener('keydown', captureKey)
