@@ -1,5 +1,5 @@
 export class Calculator {
-  constructor(displayElement) {
+  constructor(displayElement = document.getElementById('display')) {
     this.display = displayElement
   }
 
