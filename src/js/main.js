@@ -2,10 +2,14 @@ import { Calculator } from './calculator.js'
 import { ThemeManager } from './themeManager.js'
 import { Guide } from './guide.js'
 import { Speak } from './speak.js'
+import { Button } from './components/Button.js'
 
 import { themes } from '../constants/index.js'
 
 document.addEventListener('DOMContentLoaded', () => {
+  const buttons = new Button()
+  buttons.generateButtons()
+
   const calculator = new Calculator()
   const themeManager = initializeThemeManager()
 
