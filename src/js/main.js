@@ -3,10 +3,11 @@ import { ThemeManager } from './themeManager.js'
 import { Guide } from './guide.js'
 import { Speak } from './speak.js'
 import { Button } from './components/Button.js'
+import { Stars } from './Stars.js'
 
 import { themes } from '../constants/index.js'
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
   const buttons = new Button()
   buttons.generateButtons()
 
@@ -16,6 +17,9 @@ document.addEventListener('DOMContentLoaded', () => {
   addEventListeners(calculator, themeManager)
   new Speak(calculator)
   initializeGuide()
+
+  const stars = new Stars()
+  await stars.init()
 })
 
 function initializeThemeManager() {
