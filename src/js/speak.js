@@ -35,8 +35,6 @@ export class Speak {
   }
 
   start() {
-    this.#calculator.setDisplayValue('')
-
     this.#recognition.onresult = (event) => {
       const results = Object.values(event.results)
 
