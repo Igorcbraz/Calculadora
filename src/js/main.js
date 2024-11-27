@@ -1,6 +1,7 @@
 import { Calculator } from './calculator.js'
 import { ThemeManager } from './themeManager.js'
 import { Guide } from './guide.js'
+import { Speak } from './speak.js'
 
 import { themes } from '../constants/index.js'
 
@@ -9,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const themeManager = initializeThemeManager()
 
   addEventListeners(calculator, themeManager)
+  new Speak(calculator)
   initializeGuide()
 })
 

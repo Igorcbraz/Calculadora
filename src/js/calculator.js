@@ -3,6 +3,10 @@ export class Calculator {
     this.display = displayElement
   }
 
+  setDisplayValue(value) {
+    this.display.value = value
+  }
+
   handleAddInput(input) {
     this.display.value += input
   }
@@ -38,5 +42,12 @@ export class Calculator {
     }
 
     return keyActions
+  }
+
+  executeVoiceCommand(command, voiceActions) {
+    const filteredCommand = command.replace(/[^0-9+\-*/]/g, '')
+
+    if (!voiceActions[command] && filteredCommand) return this.display.value = filteredCommand
+    if (voiceActions[command]) return voiceActions[command]()
   }
 }
