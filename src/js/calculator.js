@@ -45,7 +45,7 @@ export class Calculator {
   }
 
   executeVoiceCommand(command, voiceActions) {
-    const filteredCommand = command.replace(/[^0-9+\-*/]/g, '')
+    const filteredCommand = command.replace(/[^0-9+\-*/x.]/g, '')
 
     if (!voiceActions[command] && filteredCommand) return this.display.value = filteredCommand
     if (voiceActions[command]) return voiceActions[command]()
