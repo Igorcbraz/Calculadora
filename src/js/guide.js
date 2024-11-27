@@ -13,7 +13,7 @@ export class Guide {
       doneLabel: 'Finalizar',
     }
   }
- 
+
   loadSteps() {
     this.#config.steps = [
       {
@@ -43,15 +43,30 @@ export class Guide {
         intro: 'Altere o tema do aplicativo com um clique.',
         tooltipClass: 'custom-tooltip',
         highlightClass: 'custom-highlight'
+      },
+      {
+        element: document.querySelector('#startVoice'),
+        title: 'Comandos de voz',
+        intro: `
+          <p>Clique no botão para ativar os comandos de voz. Você pode usar os seguintes comandos:</p>
+          <ul>
+            <li><strong>calcular</strong>: Calcular a conta.</li>
+            <li><strong>apagar</strong>: Apagar o último dígito.</li>
+            <li><strong>limpar</strong>: Limpar a expressão.</li>
+          </ul>
+          <p>Além de ditar a conta que deseja calcular, como "4 mais 4".</p>
+        `,
+        tooltipClass: 'custom-tooltip',
+        highlightClass: 'custom-highlight'
       }
     ]
   }
 
-  loadConfig () {
+  loadConfig() {
     this.#intro.setOptions(this.#config)
   }
 
-  start () {
+  start() {
     this.#intro.start()
   }
 }
