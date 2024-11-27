@@ -377,3 +377,38 @@ input[type=range]::-ms-thumb {
 .button-1:focus:not(:focus-visible) {
   outline: none;
 }
+
+.github-stars {
+  position: fixed;
+  bottom: 20px;
+  left: 50px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+}
+
+.github-stars a {
+  color: #333;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+
+.github-stars i {
+  margin-right: 5px;
+  margin-top: -1.5px;
+}
+
+.github-stars span {
+  margin-top: 1.5px;
+}
+
+#stars-count {
+  width: 25px;
+}
