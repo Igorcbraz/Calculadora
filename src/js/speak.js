@@ -27,17 +27,22 @@ export class Speak {
     }
 
     this.#recognition = new webkitSpeechRecognition()
+    this.#recognition.continuous = true
+    this.#recognition.lang = 'pt-BR'
+    this.#recognition.interimResults = true
+
     this.addListeners()
   }
 
   start() {
     this.#calculator.setDisplayValue('')
-    this.#recognition.continuous = true
-    this.#recognition.lang = 'pt-BR'
-    this.#recognition.interimResults = true
 
     this.#recognition.onresult = (event) => {
-      for (const result of Object.values(event.results)) {
+      const results = Object.values(event.results)
+
+      if (results.length) this.#startBtn.classList.add('listening')
+
+      for (const result of results) {
         const { transcript } = result[0]
         const { isFinal } = result
 
@@ -56,6 +61,7 @@ export class Speak {
   stop() {
     this.#recognition.stop()
     this.updateListeningState(false)
+    this.#startBtn.classList.remove('listening')
   }
 
   toggleListening() {

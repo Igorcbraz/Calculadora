@@ -1,12 +1,9 @@
-/* Importing Font */
 @import url('https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap');
 
-/* Font settings */
 * {
   font-family: 'Spartan', sans-serif;
 }
 
-/* Cores */
 :root{
   --background          : #3a4764;
   --background-dark     : #232c43;
@@ -24,209 +21,115 @@
   --key-red-background  : #d03f2f;
   --key-red-shadow      : #93261a;
 
-  --transition: 0.5s;
+  --transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Background settings */
 .calc{
-    background-color: var(--background);
-    width: 100vw;
-    height: 100vh;
-    transition: var(--transition);
+  background-color: var(--background);
+  width: 100vw;
+  height: 100vh;
+  transition: var(--transition);
 }
 .calc-content{  
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
-/* Top of the calculator */
 .calc-top h3{
-    color: var(--key-color-top);
-    transition: var(--transition);
+  color: var(--key-color-top);
+  transition: var(--transition);
 }
 
 .calc-top h4{
-    color: var(--key-color-top);
-    text-transform: uppercase;
-    font-size: 15px;
-    text-align: center;
-    margin-top: 5px;
-    transition: var(--transition);
+  color: var(--key-color-top);
+  text-transform: uppercase;
+  font-size: 15px;
+  text-align: center;
+  margin-top: 5px;
+  transition: var(--transition);
 }
 .calc-top span{
-    color: var(--key-color-top);
-    font-size: 13px;
-    transition: var(--transition);
+  color: var(--key-color-top);
+  font-size: 13px;
+  transition: var(--transition);
 }
 .calc-top-result input{
-    background-color: var(--background-very-dark); 
-    color: var(--key-color-top);
-    border: none;
-    margin-bottom: 20px;
-    text-align: right;
-    padding: 17px;
-    font-size: 32px;
-    border-radius: 10px;
-    transition: var(--transition);
+  background-color: var(--background-very-dark); 
+  color: var(--key-color-top);
+  border: none;
+  margin-bottom: 20px;
+  text-align: right;
+  padding: 17px;
+  font-size: 32px;
+  border-radius: 10px;
+  transition: var(--transition);
 }
 
-/* Keys or Bottons */
-.calc-keys{
-    background-color: var(--background-dark);
-    border-radius: 10px;
-    padding: 10px;
-    transition: var(--transition);
-}
-.calc-keys input{
-    background-color: var(--key-background);
-    color: var(--key-color-bottom);
-    border: 2px solid var(--key-background);
-    border-radius: 5px;
-    box-shadow: 1px 1.5px 1px var(--key-shadow);
-    margin: 10px;
-    height: 35px;
-    transition: var(--transition);
-}
-#reset, #del{
-    background-color: var(--key-blue-background);
-    color: #FFF;
-    box-shadow: 1px 1.5px 1px var(--key-blue-shadow);
-    border: 2px solid var(--key-blue-background);
-    transition: var(--transition);
-}
-#del{
-    font-size: 13px;
-    padding: 0 3%;
-}
-#equals{
-    background-color: var(--key-red-background);
-    color: var(--key-background);
-    box-shadow: 1px 1.5px 1px var(--key-red-shadow);
-    border: 2px solid var(--key-red-background);
-    transition: var(--transition);
-}
-
-/* Keys hover animations */
-.calc-keys input:hover{
-    border: 2px solid var(--key-background);
-    color: var(--key-color-top);
-    background-color: hsla(0, 0%, 100%, 0);
-    transition: 0.5s;
-}
-#reset:hover, #del:hover{
-    border: 2px solid var(--key-blue-background);
-    color: var(--key-blue-background);
-    background-color: hsla(0, 0%, 100%, 0);
-    transition: 0.5s;
-}
-#equals:hover{
-    border: 2px solid var(--key-red-background);
-    color: var(--key-red-background);
-    background-color: hsla(0, 0%, 100%, 0);
-    transition: 0.5s;
-}
-
-/* Keys activated */
-.calc-keys input:active{
-    box-shadow: 3px 3px 3px var(--key-shadow);
-    background-color: var(--key-background);
-    color: var(--background);
-}
-#reset:active, #del:active{
-    box-shadow: 3px 3px 3px var(--key-blue-shadow);
-    background-color: var(--key-blue-background);
-    color: var(--key-background);
-}
-#equals:active{
-    box-shadow: 3px 3px 3px var(--key-red-shadow);
-    background-color: var(--key-red-background);
-    color: var(--key-background);
-}
-
-/* Toggle theme button */
-/* Basics configs for styling input type range */
 input[type=range] {
-    -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
-    appearance: none; /* Hides the slider so that custom slider can be made */
-    width: 100%; /* Specific width is required for Firefox. */
-    background: transparent; /* Otherwise white in Chrome */
+  -webkit-appearance: none; 
+  appearance: none; 
+  width: 100%; 
+  background: transparent;
 }
-  
-input[type=range]::-webkit-slider-thumb {
-    -webkit-appearance: none;
-}
-  
-input[type=range]:focus {
-    outline: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
-}
-  
+
 input[type=range]::-ms-track {
-    width: 100%;
-    cursor: pointer;
-  
-    /* Hides the slider so custom styles can be added */
-    background: transparent; 
-    border-color: transparent;
-    color: transparent;
+  width: 100%;
+  cursor: pointer;
+  background: transparent; 
+  border-color: transparent;
+  color: transparent;
 }
 
-/* Styling Thumb for different browsers */
-/* thumb = circle on the range */
+input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; }
+input[type=range]:focus { outline: none; }
 
-/* WebKit/Blink */
 input[type=range]::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    border: none;
-    height: 18px;
-    width: 18px;
-    border-radius: 20px;
-    background: var(--key-red-background);
-    cursor: pointer;
-    box-shadow: 1px 1px 1px var(--key-red-shadow);
-    transition: var(--transition);
+  -webkit-appearance: none;
+  border: none;
+  height: 18px;
+  width: 18px;
+  border-radius: 20px;
+  background: var(--key-red-background);
+  cursor: pointer;
+  box-shadow: 1px 1px 1px var(--key-red-shadow);
+  transition: var(--transition);
 }
-/* Firefox */
+
 input[type=range]::-moz-range-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    border: none;
-    height: 18px;
-    width: 18px;
-    border-radius: 20px;
-    background: var(--key-red-background);
-    cursor: pointer;
-    box-shadow: 1px 1px 1px var(--key-red-shadow);
+  -webkit-appearance: none;
+  appearance: none;
+  border: none;
+  height: 18px;
+  width: 18px;
+  border-radius: 20px;
+  background: var(--key-red-background);
+  cursor: pointer;
+  box-shadow: 1px 1px 1px var(--key-red-shadow);
 }
-  
-  /* IE */
+
 input[type=range]::-ms-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    border: none;
-    height: 18px;
-    width: 18px;
-    border-radius: 20px;
-    background: var(--key-red-background);
-    cursor: pointer;
-    box-shadow: 1px 1px 1px var(--key-red-shadow);
+  -webkit-appearance: none;
+  appearance: none;
+  border: none;
+  height: 18px;
+  width: 18px;
+  border-radius: 20px;
+  background: var(--key-red-background);
+  cursor: pointer;
+  box-shadow: 1px 1px 1px var(--key-red-shadow);
 }
-/* Style for background */
+
 .toggle{
-    background-color: var(--background-dark);
-    border-radius: 25px;
-    height: 25px;
-    padding: 0 6px !important;
-    transition: var(--transition);
+  background-color: var(--background-dark);
+  border-radius: 25px;
+  height: 25px;
+  padding: 0 6px !important;
+  transition: var(--transition);
 }
-/* This make user can click and drag the button */
-.toggle input{
-    width: 100%;
-}
+.toggle input{ width: 100%; }
 
-
-/* Estilo personalizado para o tooltip */
 .custom-tooltip {
   background-color: var(--background);
   color: var(--guide-text);
@@ -235,7 +138,6 @@ input[type=range]::-ms-thumb {
   font-size: 16px;
 }
 
-/* Estilo personalizado para o destaque */
 .custom-highlight {
   border: 2px solid var(--key-red-background);
 }
@@ -318,11 +220,160 @@ input[type=range]::-ms-thumb {
   transition: transform 0.8s, opacity 0.5s ease-in-out;
   opacity: 0;
   visibility: hidden;
-  border-bottom: 1px dotted black;
 }
 
 .floating-btn:hover .tooltip {
   transform: translate(-50%, -30px);
   opacity: 1;
   visibility: visible;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 var(--key-blue-shadow);
+  }
+  70% {
+    transform: scale(1.1);
+    box-shadow: 0 0 0 10px rgba(0, 123, 255, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(0, 123, 255, 0);
+  }
+}
+
+.floating-btn.listening {
+  animation: pulse 1.5s infinite;
+}
+
+.calc-keys{
+  background-color: var(--background-dark);
+  border-radius: 10px;
+  transition: var(--transition);
+  padding: 20px 15px;
+}
+#buttons-container {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 15px;
+}
+#buttons-container .row {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 15px;
+}
+
+#reset .button-1-front, #del .button-1-front{
+  background-color: var(--key-blue-background);
+  color: #FFF;
+}
+#reset .button-1-edge, #del .button-1-edge {
+  background-color: var(--key-blue-shadow);
+}
+#equals .button-1-front{
+  background-color: var(--key-red-background);
+  color: var(--key-background);
+}
+#equals .button-1-edge {
+  background-color: var(--key-red-shadow);
+}
+
+.button-1 {
+  position: relative;
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  outline-offset: 4px;
+  transition: filter 250ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  height: 40px;
+}
+
+.button-1-shadow,
+.button-1-edge,
+.button-1-front {
+  height: 100%;
+  width: 100%;
+}
+
+.button-1-shadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 12px;
+  background: hsl(0deg 0% 0% / 0.25);
+  will-change: transform;
+  transform: translateY(2px);
+  transition:
+    transform
+    600ms
+    cubic-bezier(.3, .7, .4, 1);
+}
+
+.button-1-edge {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 12px;
+  background-color: var(--key-shadow);
+}
+
+.button-1-front {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  color: var(--key-color-bottom);
+  background-color: var(--key-background);
+  will-change: transform;
+  transform: translateY(-4px);
+  transition:
+    transform
+    600ms
+    cubic-bezier(.3, .7, .4, 1);
+}
+
+.button-1:hover {
+  filter: brightness(110%);
+  -webkit-filter: brightness(110%);
+}
+
+.button-1:hover .button-1-front {
+  transform: translateY(-6px);
+  transition:
+    transform
+    250ms
+    cubic-bezier(.3, .7, .4, 1.5);
+}
+
+.button-1:active .button-1-front {
+  transform: translateY(-2px);
+  transition: transform 34ms;
+}
+
+.button-1:hover .button-1-shadow {
+  transform: translateY(4px);
+  transition:
+    transform
+    250ms
+    cubic-bezier(.3, .7, .4, 1.5);
+}
+
+.button-1:active .button-1-shadow {
+  transform: translateY(1px);
+  transition: transform 34ms;
+}
+
+.button-1:focus:not(:focus-visible) {
+  outline: none;
 }
