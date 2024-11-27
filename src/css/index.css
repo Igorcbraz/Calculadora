@@ -12,7 +12,6 @@
   --background-dark     : #232c43;
   --background-very-dark: #182034;
 
-
   --key-color-top       : #ffffff;
   --key-color-bottom    : #3a4764;
   --key-background      : #eae3dc;
@@ -273,4 +272,57 @@ input[type=range]::-ms-thumb {
 .introjs-dontShowAgain label {
   background-color: transparent;
   color: var(--guide-text)
+}
+
+.floating-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 50px; 
+  width: 60px;
+  height: 60px;
+  background-color: var(--key-blue-background);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.floating-btn:hover {
+  background-color: var(--key-blue-shadow);
+}
+
+.floating-btn:active {
+  transform: scale(0.5); 
+}
+
+.floating-btn i {
+  font-size: 24px;
+}
+
+.tooltip {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translate(-50%, 10px);
+  background-color: #555;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  white-space: nowrap;
+  transition: transform 0.8s, opacity 0.5s ease-in-out;
+  opacity: 0;
+  visibility: hidden;
+  border-bottom: 1px dotted black;
+}
+
+.floating-btn:hover .tooltip {
+  transform: translate(-50%, -30px);
+  opacity: 1;
+  visibility: visible;
 }
