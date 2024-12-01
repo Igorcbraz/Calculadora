@@ -1,18 +1,25 @@
-<h1 align="center"> 📚 Calculadora 📊 </h1>
+<h1 align="center"> Calculadora </h1>
 <h3 align="center">
-  ⚡ <a href="https://igorcbraz.github.io/Calculadora/" target="_blank">Calculadora</a> Responsiva e com opções para troca de temas ⚡
+  Uma calculadora simples e intuitiva com suporte a comandos de voz e temas personalizados.
 </h3>
 
 <p align="center">
   <img src="https://img.shields.io/github/stars/Igorcbraz/Calculadora?style=social" alt="GitHub Stars"/>
+  <img src="https://img.shields.io/github/forks/Igorcbraz/Calculadora" alt="Forks"/>
   <img src="https://api.netlify.com/api/v1/badges/344dc66c-0b96-4f11-8a84-87fdfed0b4fd/deploy-status" alt="Netlify Status"/>
-  <img src="https://img.shields.io/github/license/Igorcbraz/Calculadora" alt="MIT License"/>
+  <img src="https://img.shields.io/github/license/Igorcbraz/Calculadora" alt="MIT License"/>  <img src="https://img.shields.io/github/issues/Igorcbraz/Calculadora" alt="Issues"/>
+  <img src="https://img.shields.io/github/last-commit/Igorcbraz/Calculadora" alt="Last Commit"/>
+  <img src="https://img.shields.io/github/contributors/Igorcbraz/Calculadora" alt="Contributors"/>
 </p>
 
-<p align="center">
-  <a href="#prefer-color-scheme">Prefer Color Scheme</a> •
-  <a href="#resultado-final">Resultado Final</a> •
-  <a href="#sugestoes">Sugestões</a> •
+<div align="center">
+  <img align="center" src="./images/apple-touch-icon.png" alt="Logo"/>
+</div>
+
+## Sobre
+
+<p align="justify">
+Este projeto foi criado como parte de um desafio, com o objetivo de desenvolver uma calculadora funcional e responsiva. Durante o processo, o escopo foi ampliado para incluir melhorias na arquitetura, acessibilidade e personalização, transformando o desafio em uma aplicação moderna e repleta de funcionalidades usando apenas html, css e javascript evitando ao máximo libs externas.
 </p>
 
 <div align="center">
@@ -23,103 +30,191 @@
   />
   <br>
   <span>
-    Desafio feito por
+    Desafio inicial feito por
     <a href="https://www.frontendmentor.io/challenges/calculator-app-9lteq5N29">
     <em>Frontend Mentor</em>
     </a>
   </span>
-</div>    
-    
-<h1 align="left" id="prefer-color-scheme">🌗 Prefer Color Scheme</h2>
-<p>
-  Além dos 3 diferentes temas da calculadora, foi usado o recurso de mídia <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme" target="_blank"><code>prefer-color-scheme</code></a>.
-</p>
+</div>
 
-<p>Esse recurso possibilita o entendimento de qual a preferência do usuário em relação aos temas, assim podendo receber dois valores:</p>
+## Tabela de Conteúdos
 
-<ul>
-  <li>Light (Claro)</li>
-  <li>Dark (Escuro)</li>
-</ul>
+- [Funcionalidades](#funcionalidades)
+- [Web Speech API](#web-speech-api)
+- [Prefer color scheme](#prefer-color-scheme)
+- [Projetos relacionados](#sugestoes)
+- [Stars](#stars)
 
-<p>A maneira de aplicar esse recurso de acordo com a developer.mozilla é da seguinte maneira:</p>
+## Funcionalidades
 
+- Realizar operações matemáticas básicas (adição, subtração, multiplicação, divisão)
+- Suporte a comandos de voz para facilitar a interação
+- Temas personalizados para a interface (utilizando prefer-color-scheme)
+- Responsividade para diferentes tamanhos de tela
+- Integração com comandos via teclado
+- Shortcuts dinâmicos para troca de temas
+- Guia automático ensinando a utilizar a calculadora
+
+## Web Speech API
+
+> Para desenvolver o recurso de suporte a comando de voz, sem adicionar bibliotecas externas ao projeto, foi utilizado o recurso <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API/Using_the_Web_Speech_API" target="_blank"><code>Web Speech API</code></a>
+
+Essa funcionalidade permite utilizar o recurso de áudio do próprio navegador e receber um ou mais resultados do que foi falado, em uma string.
+
+No projeto, dentro da pasta JS temos o arquivo chamado `Speak.js` com a implementação necessária para a utilização dos comandos de voz, nele primeiro iremos começar a utilizar a web speech api na função `setup`:
+
+```js
+if (!('webkitSpeechRecognition' in window)) {
+  this.#startBtn.disabled = true
+  console.error('Speech recognition not available')
+  return
+}
+
+this.#recognition = new webkitSpeechRecognition()
+this.#recognition.continuous = true
+this.#recognition.lang = 'pt-BR'
+this.#recognition.interimResults = true
+
+this.addListeners() // Adiciona o toggle de escutar ou não o usuário
 ```
+
+Após a configuração, podemos começar a processar a fala e tomar algumas ações com o que foi dito, na função `start`: 
+
+```js
+this.#recognition.onresult = (event) => {
+  const results = Object.values(event.results)
+
+  if (results.length) this.#startBtn.classList.add('listening')
+
+  for (const result of results) {
+    const { transcript } = result[0]
+    const { isFinal } = result
+
+    if (isFinal) this.#calculator.executeVoiceCommand(transcript.trim(), this.getVoiceActions())
+  }
+}
+
+this.#recognition.start()
+```
+
+Nesse caso, estamos iniciado o reconhecimento de fala e processando cada resultado (palavra ou frase dita) esperando até o momento da frase final ser completa, exemplo de resultados para uma frase "2+2":
+
+1. "dois" ou "2"
+2. "mais" ou "+"
+3. "dois" ou "2"
+4. ao terminar de falar a frase, entender que o resultado final deve ser "2+2"
+
+No caso, é importante executar o comando de voz apenas com a frase final para ter a garantia do contexto como um todo foi processado e estamos obtendo o resultado mais próximo do desejado
+
+Podemos também, lidar com o caso de erro:
+
+```js
+this.#recognition.onend = () => {
+  this.updateListeningState(false)
+}
+```
+
+> A função updateListeningState, tem como objetivo alterar o estilo do botão de escuta.
+
+Por fim, iremos precisar configurar uma função para parar de ouvir o usuário e manipular alguns estilos:
+
+```js
+this.#recognition.stop()
+this.updateListeningState(false)
+this.#startBtn.classList.remove('listening')
+```
+
+## Prefer Color Scheme
+
+> Para auxiliar os 3 diferentes temas da calculadora, foi usado o recurso de mídia <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme" target="_blank"><code>prefer-color-scheme</code></a>.
+
+Esse recurso possibilita o entendimento de qual a preferência do usuário em relação aos temas, assim podendo receber dois valores:
+
+- Light (Claro)
+- Dark (Escuro)
+
+A maneira de aplicar esse recurso, no css, de acordo com a developer.mozilla é da seguinte maneira:
+
+```css
 @media (prefers-color-scheme: dark) {
-  // Configurações CSS para o tema dark
+  /* Configurações CSS para o tema dark */
 }
 
 @media (prefers-color-scheme: light) {
-  // Configurações CSS para o tema light
+  /* Configurações CSS para o tema light */ 
 }
 ```
-<p>Mas com esse método o carregamento do código irá ficar mais lento pois seria necessário repetir todas as propriedades desejadas com suas novas colorações.</p>
 
-> **Então qual a solução ? 🤔**
+Mas com esse método o código irá ficar mais verboso e provavelmente com difícil manutenção, pois seria necessário repetir todas as propriedades desejadas com suas novas colorações.
 
-<p>Iremos apenas mudar os valores das variáveis do CSS com JS.</p>
+### Então qual a solução ? 🤔
 
-```
-const darkThemeMq  = window.matchMedia("(prefers-color-scheme: dark)");
-const lightThemeMq = window.matchMedia("(prefers-color-scheme: light)");
-```
-<p>Primeiro identificamos qual a preferência de tema do usuário e guardamos o resultado em uma constante.</p>
-<p>Agora só precisamos verificar qual o valor das constantes e modificar os valores das variáveis do CSS</p>
+Iremos apenas mudar os valores das variáveis do CSS com JS.
 
-```
-if (darkThemeMq.matches) {
-  document.getElementById('btnTheme').value = "3";
-  theme.dark();
-} else if(lightThemeMq.matches){
-  document.getElementById('btnTheme').value = "2";
-  theme.light();    
-} else {
-  document.getElementById('btnTheme').value = "1";
-  theme.default();    
-}
-```
-<p>theme.dark(),theme.light()... Armazenam os comandos para modificar os valores das variáveis no CSS. Sendo eles:</p>
+Primeiro iremos, na pasta de constantes, verificar o arquivo `themes.js`:
 
-```
-const root = document.querySelector(':root');
-
-const theme = {
-  default() {
-    root.style.setProperty('--background'          , '#3a4764');
-    // E as demais variáveis
+```js
+export const themes = {
+  'Default': {
+    id: '1',
+    colors: [ { name: '--background', value: '#3a4764' } ]
   },
-  light() {
-    root.style.setProperty('--background'          , '#e6e6e6');
-    // E as demais variáveis
+  'Light': {
+    id: '2',
+    colors: [ { name: '--background', value: '#e6e6e6' } ]
   },
-  dark() {
-    root.style.setProperty('--background'          , '#17062a');
-    // E as demais variáveis
+  'Dark': {
+    id: '3',
+    colors: [ { name: '--background', value: '#17062a' } ]
   }
 }
 ```
+Note o _Nome dos temas_ e os _id's_ utilizados, eles serão utilizados no arquivo `ThemeManager.js`, na pasta JS, da seguinte forma:
 
-> **Como é Possível fazer o Teste/Debug ? 🤔**
+```js
+function changeThemeById(themeId) {
+  const theme = Object.values(this.themesConfig).find(theme => theme.id === themeId)
+  if (!theme) return
 
-</p>Podemos usar a ferramenta de desenvoledor do google chrome e alterar os valores Dark ou Light</p>
+  this.#btnTheme.value = theme.id
+  this.applyTheme(theme.colors)
+}
+
+function setPreferColorSchemeTheme() {
+  if (!this.#btnTheme || !window.matchMedia) return
+
+  Object.keys(this.themesConfig).forEach(themeName => {
+    const matchedPreferredScheme = window.matchMedia(`(prefers-color-scheme: ${themeName})`)?.matches
+
+    if (matchedPreferredScheme) this.#btnTheme.value = this.themesConfig[themeName].id
+  })
+
+  this.changeThemeById(this.#btnTheme.value)
+}
+```
+
+O objetivo aqui, está em fazer um código para troca de temas de forma versátil e de fácil manutenção.
+Nesse caso, conseguimos buscar a preferência do usuário, através do `window.matchMedia('(prefers-color-scheme: ${themeName})')`, concatenado com o nome do nosso tema (que é igual a nomenclatura desejada)
+
+Após descobrir o tema desejado, podemos enviar o id do tema em questão para função `changeThemeById` com objetivo de obter a nova coloração desejada
+
+> Para entender exatamente o que cada função está fazendo, como a `applyTheme`, acesse o arquivo na pasta JS
+
+### Como é Possível fazer o Teste/Debug ? 🤔
+
+Com a ferramenta de devtools do seu navegador, acesse a aba "Rendering" e logo após procure o título "Emulate CSS media feature prefers-colors-scheme":
+
 <img width="400px" height="300px" src="images/Debug.jpg"/>
 
-<div align="left">
-
-<h1 id="resultado-final">Resultado Final 🥳</h3>
+Alterando os valores padrões pelo devtools, o resultado final será:
 
 <img width="584px" height="372px" src="https://user-images.githubusercontent.com/82618164/126012352-7c19f908-f04b-4c66-a568-191bdfa5d8b8.gif"/>
 
-<h1 id="sugestoes">Você também ṕode gostar 🤩</h3>
+<h2 id="sugestoes">Você também pode gostar ⭐</h2>
 
 - [Gitfest](https://github.com/Igorcbraz/GitFest) - Gere uma lineup de festival com base nos seus principais repositórios do Github
 - [Enkoji](https://github.com/Igorcbraz/Enkoji) - Site feito para o Enkoji, um templo zen-budista japonês fundado em 1920 no Japão
 
----
+## Stars
 
-> GitHub [@Igorcbraz](https://github.com/Igorcbraz) &nbsp;&middot;&nbsp;
-> Linkedin [@Igorcbraz](https://www.linkedin.com/in/igorcbraz/)
-
----
-
-<img width="140px" height="33px" src="https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white"/> <img width="140px" height="33px" src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E"/> <img width="100px" height="33px" src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white"/> <img width="100px" height="33px" src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white"/>
+[![Stargazers repo roster for @Igorcbraz/Calculadora](https://reporoster.com/stars/dark/notext/Igorcbraz/Calculadora)](https://github.com/Igorcbraz/Calculadora/stargazers)
