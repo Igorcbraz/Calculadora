@@ -1,7 +1,7 @@
-import { Calculator } from './calculator.js'
-import { ThemeManager } from './themeManager.js'
-import { Guide } from './guide.js'
-import { Speak } from './speak.js'
+import { Calculator } from './Calculator.js'
+import { ThemeManager } from './ThemeManager.js'
+import { Guide } from './Guide.js'
+import { Speak } from './Speak.js'
 import { Button } from './components/Button.js'
 import { Stars } from './Stars.js'
 
