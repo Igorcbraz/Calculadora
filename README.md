@@ -210,11 +210,11 @@ Alterando os valores padrões pelo devtools, o resultado final será:
 
 <img width="584px" height="372px" src="https://user-images.githubusercontent.com/82618164/126012352-7c19f908-f04b-4c66-a568-191bdfa5d8b8.gif"/>
 
-<h2 id="sugestoes">Você também pode gostar ⭐</h2>
+<h2 id="sugestoes">Você também pode gostar</h2>
 
 - [Gitfest](https://github.com/Igorcbraz/GitFest) - Gere uma lineup de festival com base nos seus principais repositórios do Github
 - [Enkoji](https://github.com/Igorcbraz/Enkoji) - Site feito para o Enkoji, um templo zen-budista japonês fundado em 1920 no Japão
 
-## Stars
+<h2 id="stars">⭐ Stars ⭐</h2>
 
-[![Stargazers repo roster for @Igorcbraz/Calculadora](https://reporoster.com/stars/dark/notext/Igorcbraz/Calculadora)](https://github.com/Igorcbraz/Calculadora/stargazers)
+[![Stargazers repo roster for @Igorcbraz/Calculadora](https://reporoster.com/stars/dark/Igorcbraz/Calculadora)](https://github.com/Igorcbraz/Calculadora/stargazers)
