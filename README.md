@@ -1,6 +1,6 @@
-<h1 align="center"> Calculadora </h1>
+<h1 align="center"> <a href="https://calculatorcbraz.netlify.app/">Calculadora</a> </h1>
 <h3 align="center">
-  Uma calculadora simples e intuitiva com suporte a comandos de voz e temas personalizados.
+  Calculadora completa com comandos de voz, atalhos de teclado e temas adaptáveis utilizando apenas JavaScript puro
 </h3>
 
 <p align="center">
